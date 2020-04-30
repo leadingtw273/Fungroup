@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>廣告內容</title>
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="/libs/bootstrap-4/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="/libs/datetimepicker/jquery.datetimepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light border-bottom">
+      <a class="navbar-brand center" href="#"
+        ><img src="/assets/icons/Fubon.png" width="30" height="30" alt="" />
+        Fungroup 內容管理系統</a
+      >
+      <div>
+        <span>admin</span>
+        <button type="button" class="btn btn-outline-dark ml-2">登出</button>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+      <div class="row">
+        <!-- Side bar -->
+        <div class="col-2 p-0">
+          <div class="list-group" id="accordion">
+            <button
+              id="headingOne"
+              type="button"
+              class="btn btn-link border-0 rounded-0 text-white bg-secondary list-group-item list-group-item-action"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="false"
+              aria-controls="collapseOne"
+            >
+              會員管理
+            </button>
+            <div
+              id="collapseOne"
+              class="collapse"
+              aria-labelledby="headingOne"
+              data-parent="#accordion"
+            >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">尚無內容</li>
+              </ul>
+            </div>
+
+            <button
+              id="headingTwo"
+              type="button"
+              class="btn btn-link border-0 rounded-0 text-white bg-secondary list-group-item list-group-item-action"
+              data-toggle="collapse"
+              data-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              賽事活動管理
+            </button>
+            <div
+              id="collapseTwo"
+              class="collapse"
+              aria-labelledby="headingTwo"
+              data-parent="#accordion"
+            >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">尚無內容</li>
+              </ul>
+            </div>
+
+            <button
+              id="headingThree"
+              type="button"
+              class="btn btn-link border-0 rounded-0 text-white bg-secondary list-group-item list-group-item-action"
+              data-toggle="collapse"
+              data-target="#collapseThree"
+              aria-expanded="true"
+              aria-controls="collapseThree"
+            >
+              內容管理
+            </button>
+            <div
+              id="collapseThree"
+              class="collapse show"
+              aria-labelledby="headingThree"
+              data-parent="#accordion"
+            >
+              <div class="list-group list-group-flush">
+                <a
+                  type="button"
+                  class="btn btn-link btn-light border-0 rounded-0 list-group-item list-group-item-action"
+                  href="/article"
+                >
+                  文章內容
+                </a>
+                <a
+                  type="button"
+                  class="btn btn-link btn-light active border-0 rounded-0 list-group-item list-group-item-action"
+                  href="/advertising"
+                >
+                  廣告內容
+                </a>
+                <a
+                  type="button"
+                  class="btn btn-link btn-light border-0 rounded-0 list-group-item list-group-item-action"
+                  href="/notification"
+                >
+                  自訂推播
+                </a>
+                <a
+                  type="button"
+                  class="btn btn-link btn-light border-0 rounded-0 list-group-item list-group-item-action"
+                  href="/terms"
+                >
+                  條款內容
+                </a>
+              </div>
+            </div>
+
+            <button
+              id="headingFour"
+              type="button"
+              class="btn btn-link border-0 rounded-0 text-white bg-secondary list-group-item list-group-item-action"
+              data-toggle="collapse"
+              data-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              商城管理
+            </button>
+            <div
+              id="collapseFour"
+              class="collapse"
+              aria-labelledby="headingFour"
+              data-parent="#accordion"
+            >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">尚無內容</li>
+              </ul>
+            </div>
+
+            <button
+              id="headingFive"
+              type="button"
+              class="btn btn-link border-0 rounded-0 text-white bg-secondary list-group-item list-group-item-action"
+              data-toggle="collapse"
+              data-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              系統管理
+            </button>
+            <div
+              id="collapseFive"
+              class="collapse"
+              aria-labelledby="headingFive"
+              data-parent="#accordion"
+            >
+              <div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">尚無內容</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="col-10 p-4 bg-light">
+          <!-- Breadcrumb -->
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent p-0">
+              <li class="breadcrumb-item">
+                <a href="#" class="text-dark">內容管理</a>
+              </li>
+              <li class="breadcrumb-item active">廣告內容</li>
+            </ol>
+          </nav>
+
+          <!-- Advertising Content -->
+          <div class="mt-4">
+            <!-- Title Bar -->
+            <div>
+              <div class="d-inline-flex border-right">
+                <h4 style="width: 150px;">主表</h4>
+              </div>
+              <button
+                type="button"
+                class="btn btn-success ml-3"
+                data-toggle="modal"
+                data-target="#createAdvertisingModal"
+              >
+                新增廣告
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="createAdvertisingModal"
+              role="dialog"
+              aria-labelledby="createAdvertisingModalTitle"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-lg modal-dialog-centered"
+                role="document"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">新增文章內容</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group col-6">
+                          <label for="advertisingName">名稱</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingName"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="advertisingType">廣告類型</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingType"
+                          />
+                        </div>
+                        <div class="form-group col-12">
+                          <label for="advertisingSource">廣告來源</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingSource"
+                          />
+                        </div>
+                        <div class="form-group col-12">
+                          <label for="advertisingImage">廣告縮圖</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingImage"
+                          />
+                        </div>
+                        <div class="form-group col-4">
+                          <label for="advertisingClickCount">點擊次數</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="advertisingClickCount"
+                            value="0"
+                            disabled
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="advertisingOnGoingStartt">上架時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingOnGoingStartt"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="advertisingOnGoingEndt">下架時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingOnGoingEndt"
+                          />
+                        </div>
+                        <div class="form-group col-4">
+                          <label for="advertisingSeq">次序</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="advertisingSeq"
+                            value="0"
+                          />
+                        </div>
+                        <div class="form-check form-check-inline col-12">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="advertisingActiveSwitch"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="advertisingActiveSwitch"
+                            >啟用</label
+                          >
+                        </div>
+
+                        <div class="form-group col-6">
+                          <label for="advertisingInsertt">建立時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingInsertt"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="advertisingModify_by">編輯者</label>
+                          <select
+                            class="form-control"
+                            id="advertisingModify_by"
+                          >
+                            <option value="">mark</option>
+                            <option value="">andy</option>
+                          </select>
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="advertisingModifyt">編輯時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="advertisingModifyt"
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-25">
+                      新增
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="my-3 px-3">
+              <table
+                id="advertisingTable"
+                class="table table-striped table-bordered nowrap"
+                style="width: 100%;"
+              >
+                <thead>
+                  <tr>
+                    <th>名稱</th>
+                    <th>廣告類型</th>
+                    <th>廣告來源</th>
+                    <th>廣告縮圖</th>
+                    <th>點擊次數</th>
+                    <th>建立時間</th>
+                    <th>啟用/停用</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>566洗髮乳</td>
+                    <td>日用品</td>
+                    <td>mk</td>
+                    <td>
+                      https://b.ecimg.tw/items/DAAA60A9007BOBV/000001_1533606962.jpg
+                    </td>
+                    <td>76</td>
+                    <td>2011-05-29</td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>麥根沙士</td>
+                    <td>飲品</td>
+                    <td>dw</td>
+                    <td>
+                      https://c.ecimg.tw/items/DBAB1KA9005QHKY/000001_1478378946.jpg
+                    </td>
+                    <td>8453</td>
+                    <td>2011-05-29</td>
+                    <td>false</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Reward Content -->
+          <div class="mt-5">
+            <!-- Title Bar -->
+            <div>
+              <div class="d-inline-flex border-right">
+                <h4 style="width: 150px;">獎勵清單</h4>
+              </div>
+              <button
+                type="button"
+                class="btn btn-success ml-3"
+                data-toggle="modal"
+                data-target="#createRewardModal"
+              >
+                新增獎勵
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="createRewardModal"
+              role="dialog"
+              aria-labelledby="createRewardModalTitle"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-lg modal-dialog-centered"
+                role="document"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">新增獎勵</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group col-4">
+                          <label for="rewardRanked">排行</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="rewardRanked"
+                          />
+                        </div>
+                        <div class="form-group col-4">
+                          <label for="rewardSeq">次序</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="rewardSeq"
+                            value="0"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="rewardInsertt">建立時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="rewardInsertt"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="rewardModifyt">編輯時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="rewardModifyt"
+                          />
+                        </div>
+                        <div class="form-check form-check-inline col-12">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="rewardActiveSwitch"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="rewardActiveSwitch"
+                            >啟用</label
+                          >
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-25">
+                      新增
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="my-3 px-3">
+              <table
+                id="rewardTable"
+                class="table table-striped table-bordered nowrap"
+                style="width: 100%;"
+              >
+                <thead>
+                  <tr>
+                    <th>廣告ID</th>
+                    <th>獎勵ID</th>
+                    <th>獲得模式ID</th>
+                    <th>排行</th>
+                    <th>建立時間</th>
+                    <th>啟用/停用</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>46fghj54f32g</td>
+                    <td>jt84u6h2gys5</td>
+                    <td>c2r5j4d7f5y6</td>
+                    <td>
+                      059
+                    </td>
+                    <td>2011-05-29</td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>y5d215t1s5s5</td>
+                    <td>y8d49e3g41x2</td>
+                    <td>t54s31qw169f</td>
+                    <td>
+                      105
+                    </td>
+                    <td>2020-06-29</td>
+                    <td>true</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- ObtainMode Content -->
+          <div class="mt-5">
+            <!-- Title Bar -->
+            <div>
+              <div class="d-inline-flex border-right">
+                <h4 style="width: 150px;">獲得模式</h4>
+              </div>
+              <button
+                type="button"
+                class="btn btn-success ml-3"
+                data-toggle="modal"
+                data-target="#createObtainModeModal"
+              >
+                新增模式
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="createObtainModeModal"
+              role="dialog"
+              aria-labelledby="createObtainModeModalTitle"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-lg modal-dialog-centered"
+                role="document"
+              >
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">新增獲得模式</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-row">
+                        <div class="form-group col-6">
+                          <label for="obtainModeName">名稱</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="obtainModeName"
+                          />
+                        </div>
+                        <div class="form-group col-4">
+                          <label for="obtainModeSeq">次序</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="obtainModeSeq"
+                            value="0"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="obtainModeInsertt">建立時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="obtainModeInsertt"
+                          />
+                        </div>
+                        <div class="form-group col-6">
+                          <label for="obtainModeModifyt">編輯時間</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="obtainModeModifyt"
+                          />
+                        </div>
+                        <div class="form-check form-check-inline col-12">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="obtainModeActiveSwitch"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="obtainModeActiveSwitch"
+                            >啟用</label
+                          >
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary w-25">
+                      新增
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Table -->
+            <div class="my-3 px-3">
+              <table
+                id="obtainModeTable"
+                class="table table-striped table-bordered nowrap"
+                style="width: 100%;"
+              >
+                <thead>
+                  <tr>
+                    <th>名稱</th>
+                    <th>獲得模式ID</th>
+                    <th>建立時間</th>
+                    <th>啟用/停用</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>工廠模式</td>
+                    <td>6gd4s6d8435</td>
+                    <td>2011-05-29</td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>單例模式</td>
+                    <td>54sf84gdf5d</td>
+                    <td>2020-04-28</td>
+                    <td>true</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/libs/jquery-3/jquery-3.5.0.min.js"></script>
+    <script src="/libs/bootstrap-4/js/bootstrap.min.js"></script>
+    <script src="/libs/moment.js"></script>
+    <script src="/libs/datetimepicker/jquery.datetimepicker.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('#advertisingTable').DataTable({
+          scrollX: true,
+        });
+        $('#rewardTable').DataTable({
+          scrollX: true,
+        });
+        $('#obtainModeTable').DataTable({
+          scrollX: true,
+        });
+
+        $.datetimepicker.setDateFormatter('moment');
+        $('#advertisingOnGoingStartt').datetimepicker();
+        $('#advertisingOnGoingEndt').datetimepicker();
+        $('#advertisingInsertt').datetimepicker();
+        $('#advertisingModifyt').datetimepicker();
+
+        $('#rewardInsertt').datetimepicker();
+        $('#rewardModifyt').datetimepicker();
+
+        $('#obtainModeInsertt').datetimepicker();
+        $('#obtainModeModifyt').datetimepicker();
+      });
+    </script>
+  </body>
+</html>
